@@ -3,9 +3,11 @@ const app = express();
 const { mongoose } = require('./database/database.js');
 const { PORT } = require('./config.js');
 const BASE_URL = `http://localhost`;
+const cors = require('cors');
 
 // Middlewares
 app.use(express.json());
+app.use(cors());
 
 // Routers
 const routerOutgoing = require('./routers/gastos_routes.js');
